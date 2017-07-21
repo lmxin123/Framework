@@ -46,3 +46,9 @@ E:\work\Framework\Release\Framework.Common.pdb
 E:\work\Framework\Libraries\Framework.Common\obj\Debug\Framework.Common.csprojResolveAssemblyReference.cache
 E:\work\Framework\Libraries\Framework.Common\obj\Debug\Framework.Common.dll
 E:\work\Framework\Libraries\Framework.Common\obj\Debug\Framework.Common.pdb
+F:\project\Framework\Release\Framework.Common.dll
+F:\project\Framework\Release\Framework.Common.pdb
+F:\project\Framework\Libraries\Framework.Common\obj\Debug\Framework.Common.dll
+F:\project\Framework\Libraries\Framework.Common\obj\Debug\Framework.Common.pdb
+F:\project\Framework\Release\Framework.Common.dll.config
+F:\project\Framework\Libraries\Framework.Common\obj\Debug\Framework.Common.csprojResolveAssemblyReference.cache

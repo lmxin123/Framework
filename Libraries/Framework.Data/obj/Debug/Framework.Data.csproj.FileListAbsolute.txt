@@ -52,3 +52,9 @@ E:\work\Framework\Release\Framework.Data.pdb
 E:\work\Framework\Libraries\Framework.Data\obj\Debug\Framework.Data.csprojResolveAssemblyReference.cache
 E:\work\Framework\Libraries\Framework.Data\obj\Debug\Framework.Data.dll
 E:\work\Framework\Libraries\Framework.Data\obj\Debug\Framework.Data.pdb
+F:\project\Framework\Release\Framework.Data.dll.config
+F:\project\Framework\Release\Framework.Data.dll
+F:\project\Framework\Release\Framework.Data.pdb
+F:\project\Framework\Libraries\Framework.Data\obj\Debug\Framework.Data.csprojResolveAssemblyReference.cache
+F:\project\Framework\Libraries\Framework.Data\obj\Debug\Framework.Data.dll
+F:\project\Framework\Libraries\Framework.Data\obj\Debug\Framework.Data.pdb
