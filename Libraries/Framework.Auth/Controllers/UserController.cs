@@ -162,8 +162,8 @@ namespace Framework.Auth.Controllers
                 using (var db = new AuthDbContext())
                 {
                     var query = from u in db.Users
-                                join ur in db.Users on u.Id equals ur.Id
-                                join r in db.Roles on ur.Id equals r.Id
+                                join ur in db.UserRoles on u.Id equals ur.UserId
+                                join r in db.Roles on ur.RoleId equals r.Id
                                 orderby u.CreateTime descending
                                 where u.UserState != UserStates.Delete
                                 select new
@@ -356,11 +356,11 @@ namespace Framework.Auth.Controllers
         {
             if (disposing)
             {
-                if (_userManager != null)
-                {
-                    _userManager.Dispose();
-                    _userManager = null;
-                }
+                //if (_userManager != null)
+                //{
+                //    _userManager.Dispose();
+                //    _userManager = null;
+                //}
 
                 if (_signInManager != null)
                 {

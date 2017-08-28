@@ -36,6 +36,8 @@ namespace Framework.Auth
             return new AuthDbContext();
         }
 
+        public IDbSet<IdentityUserRole> UserRoles { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             if (modelBuilder == null)

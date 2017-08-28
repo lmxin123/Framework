@@ -13,7 +13,7 @@ namespace Framework.Data
         protected const string LengthErrMsg = "{0}长度必需在{1}个字符以内";
         protected const string RequiredErrMsg = "请输入{0}";
         protected const string RequiredSelectErrMsg = "请选择{0}";
-        protected const string RangeLengthErrMsg = "{0}必需在{1}到{2}个字符以内";
+        protected const string RangeLengthErrMsg = "{0}必需在{2}到{1}个字符以内";
     }
     /// <summary>
     /// 父级实体，建议新建实体都继承至此类

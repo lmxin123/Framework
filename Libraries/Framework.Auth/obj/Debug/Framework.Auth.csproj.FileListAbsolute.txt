@@ -6,3 +6,11 @@ E:\work\Framework\Libraries\Framework.Auth\obj\Debug\Framework.Auth.Migrations.i
 E:\work\Framework\Libraries\Framework.Auth\obj\Debug\Framework.Auth.csproj.GenerateResource.Cache
 E:\work\Framework\Libraries\Framework.Auth\obj\Debug\Framework.Auth.dll
 E:\work\Framework\Libraries\Framework.Auth\obj\Debug\Framework.Auth.pdb
+E:\github\Framework\Release\Framework.Auth.dll.config
+E:\github\Framework\Release\Framework.Auth.dll
+E:\github\Framework\Release\Framework.Auth.pdb
+E:\github\Framework\Libraries\Framework.Auth\obj\Debug\Framework.Auth.csprojResolveAssemblyReference.cache
+E:\github\Framework\Libraries\Framework.Auth\obj\Debug\Framework.Auth.Migrations.init.resources
+E:\github\Framework\Libraries\Framework.Auth\obj\Debug\Framework.Auth.csproj.GenerateResource.Cache
+E:\github\Framework\Libraries\Framework.Auth\obj\Debug\Framework.Auth.dll
+E:\github\Framework\Libraries\Framework.Auth\obj\Debug\Framework.Auth.pdb

@@ -449,16 +449,38 @@
             Not used for writing log messages. Specifies that a logging category should not write any messages.
             </summary>
         </member>
-        <member name="T:Microsoft.Extensions.Logging.Internal.FormattedLogValues">
+        <member name="T:Microsoft.Extensions.Logging.Abstractions.NullLogger">
             <summary>
-            LogValues to enable formatting options supported by <see cref="M:string.Format"/>. 
-            This also enables using {NamedformatItem} in the format string.
+            Minimalistic logger that does nothing.
             </summary>
         </member>
-        <member name="T:Microsoft.Extensions.Logging.Internal.LogValuesFormatter">
+        <member name="M:Microsoft.Extensions.Logging.Abstractions.NullLogger.BeginScope``1(``0)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.Extensions.Logging.Abstractions.NullLogger.IsEnabled(Microsoft.Extensions.Logging.LogLevel)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.Extensions.Logging.Abstractions.NullLogger.Log``1(Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.EventId,``0,System.Exception,System.Func{``0,System.Exception,System.String})">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.Extensions.Logging.Abstractions.NullLoggerProvider">
             <summary>
-            Formatter to convert the named format items like {NamedformatItem} to <see cref="M:string.Format"/> format.
+            Provider for the <see cref="T:Microsoft.Extensions.Logging.Abstractions.NullLogger"/>.
             </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.Logging.Abstractions.NullLoggerProvider.CreateLogger(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.Extensions.Logging.Abstractions.NullLoggerProvider.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.Extensions.Logging.Abstractions.Internal.NullScope">
+            <summary>
+            An empty scope without any logic
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.Logging.Abstractions.Internal.NullScope.Dispose">
+            <inheritdoc />
         </member>
         <member name="P:Microsoft.Extensions.Logging.Abstractions.Resource.UnexpectedNumberOfNamedParameters">
             <summary>
@@ -468,6 +490,17 @@
         <member name="M:Microsoft.Extensions.Logging.Abstractions.Resource.FormatUnexpectedNumberOfNamedParameters(System.Object,System.Object,System.Object)">
             <summary>
             The format string '{0}' does not have the expected number of named parameters. Expected {1} parameter(s) but found {2} parameter(s).
+            </summary>
+        </member>
+        <member name="T:Microsoft.Extensions.Logging.Internal.FormattedLogValues">
+            <summary>
+            LogValues to enable formatting options supported by <see cref="M:string.Format"/>.
+            This also enables using {NamedformatItem} in the format string.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Extensions.Logging.Internal.LogValuesFormatter">
+            <summary>
+            Formatter to convert the named format items like {NamedformatItem} to <see cref="M:string.Format"/> format.
             </summary>
         </member>
     </members>

@@ -46,7 +46,7 @@ namespace Framework.Common.Xml
                         formattedResult = SerializerHelper.FormatXML(ms);
                     }
                 }
-                catch (Exception e) { }
+                catch { }
 
                 if (!string.IsNullOrEmpty(formattedResult))
                     return formattedResult;
@@ -74,7 +74,7 @@ namespace Framework.Common.Xml
             }
             catch (Exception ex)
             {
-                if (isThrowException) throw;
+                if (isThrowException) throw ex;
                 else return null;
             }
             finally
@@ -128,9 +128,9 @@ namespace Framework.Common.Xml
                 reader = new StringReader(xml);
                 return (T)serializer.Deserialize(reader);
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                if (isThrowException) throw;
+                if (isThrowException) throw ex;
                 else return null;
             }
             finally

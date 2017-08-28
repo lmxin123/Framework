@@ -35,14 +35,18 @@ namespace Framework.Auth
         public static string CACHE_USERID = string.Empty;
         static ApplicationUserManager _userManager;
 
-        static IdentityHelpers()
+        static ApplicationUserManager UserManager
         {
-            _userManager = HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            get
+            {
+                 _userManager= _userManager?? HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                return _userManager;
+            }
         }
 
         public static MvcHtmlString GetUserName(this HtmlHelper html, string id)
         {
-            var user = _userManager.FindById(id);
+            var user = UserManager.FindById(id);
 
             return new MvcHtmlString(user?.UserName);
         }
@@ -80,7 +84,7 @@ namespace Framework.Auth
                 using (var db = new AuthDbContext())
                 {
                     //   var role =Applicat db.FirstOrDefault(item => item.UserId == CACHE_USERID);
-                    var roles = _userManager.GetRoles(CACHE_USERID);
+                    var roles = UserManager.GetRoles(CACHE_USERID);
                     if (roles == null || roles.Count == 0)
                         throw new Exception("用户缺少权限！");
 

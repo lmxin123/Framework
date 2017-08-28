@@ -323,6 +323,27 @@ namespace Framework.Common.IO
 
             return path + name;
         }
+
+        public static string[] SaveFile(HttpRequestBase request, string path)
+        {
+            var nameList = new string[request.Files.Count];
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
+            for (int i = 0; i < request.Files.Count; i++)
+            {
+                var file = request.Files[i];
+                nameList[i] = Guid.NewGuid().ToString() + Utility.GetFileSuffix(file.FileName);
+                string fullName = string.Concat(path, nameList[i]);
+                if (File.Exists(fullName))
+                {
+                    File.Delete(fullName);
+                }
+                file.SaveAs(fullName);
+            }
+            return nameList;
+        }
     }
     public class UploadFilesResult
     {

@@ -552,19 +552,33 @@ namespace Framework.Common
     public enum AccessTypes
     {
         /// <summary>
-        /// 付费
-        /// </summary>
-        [Display(Name = "付费")]
-        Pay,
-        /// <summary>
         /// 免费
         /// </summary>
         [Display(Name = "免费")]
         Free,
         /// <summary>
+        /// 付费
+        /// </summary>
+        [Display(Name = "付费")]
+        Pay,
+        /// <summary>
         /// 限时免费
         /// </summary>
-        [Display(Name = "限时免费")]
+        [Display(Name = "限时付费")]
         TimeFree
+    }
+
+    /// <summary>
+    /// 网络类型
+    /// </summary>
+    public enum NetTypes
+    {
+        UNKNOW = 0,
+        NONE = 1,
+        ETHERNET = 2,
+        WIFI = 3,
+        CELL2G = 4,
+        CELL3G = 5,
+        CELL4G = 6
     }
 }

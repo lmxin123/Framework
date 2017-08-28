@@ -46,22 +46,28 @@ namespace Framework.Common.Extensions
             {
                 var memInfo = type.GetMember(val.ToString());
                 var attributes = memInfo[0].GetCustomAttributes(typeof(DisplayAttribute), false);
-                if (attributes == null || attributes.Count() == 0)
-                    attributes = memInfo[0].GetCustomAttributes(typeof(DescriptionAttribute), false);
-
                 string name = string.Empty, value = string.Empty;
 
-                if (attributes.Count() == 0)
+                if (attributes != null && attributes.Length > 0)
+                {
+                    name = ((DisplayAttribute)attributes[0]).Name;
+                }
+                else
+                {
+                    attributes = memInfo[0].GetCustomAttributes(typeof(DescriptionAttribute), false);
+
+                    if (attributes != null && attributes.Length > 0)
+                    {
+                        name = ((DescriptionAttribute)attributes[0]).Description;
+                    }
+                }
+
+                if (string.IsNullOrEmpty(name))
                 {
                     name = value = val.ToString();
                 }
                 else
                 {
-                    name = ((DisplayAttribute)attributes.ToArray()[0]).Name;
-
-                    if (string.IsNullOrEmpty(name))
-                        name = ((DescriptionAttribute)attributes.ToArray()[0]).Description;
-
                     value = typeof(T).Name.ToLower() == "string" ? val.ToString() : ((T)val).ToString();
                 }
 

@@ -19,6 +19,10 @@ namespace Framework.Auth.Test.Controllers
     {
         private readonly ApplicationRoleManager _roleManager;
 
+        public RoleController()
+        {
+        }
+
         public RoleController(ApplicationRoleManager roleManager)
         {
             _roleManager = roleManager;
