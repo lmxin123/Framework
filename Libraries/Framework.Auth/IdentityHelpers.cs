@@ -39,7 +39,7 @@ namespace Framework.Auth
         {
             get
             {
-                 _userManager= _userManager?? HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                _userManager = HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>();
                 return _userManager;
             }
         }

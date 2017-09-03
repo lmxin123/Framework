@@ -356,11 +356,11 @@ namespace Framework.Auth.Controllers
         {
             if (disposing)
             {
-                //if (_userManager != null)
-                //{
-                //    _userManager.Dispose();
-                //    _userManager = null;
-                //}
+                if (_userManager != null)
+                {
+                    _userManager.Dispose();
+                    _userManager = null;
+                }
 
                 if (_signInManager != null)
                 {
