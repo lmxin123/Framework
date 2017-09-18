@@ -75,7 +75,11 @@ namespace Framework.Auth
         public string Icon { get; set; }
         [XmlElement(typeof(SubMenuItem), ElementName = "SubMenu")]
         public List<SubMenuItem> SubMenuList { get; set; }
-
+        /// <summary>
+        /// 是否为登录后默认进入的页面
+        /// </summary>
+        [XmlAttribute]
+        public bool Default { get; set; }
         public bool All { get; set; }
     }
 

@@ -64,3 +64,10 @@ F:\project\Framework\Release\Framework.Data.pdb
 F:\project\Framework\Libraries\Framework.Data\obj\Debug\Framework.Data.csprojResolveAssemblyReference.cache
 F:\project\Framework\Libraries\Framework.Data\obj\Debug\Framework.Data.dll
 F:\project\Framework\Libraries\Framework.Data\obj\Debug\Framework.Data.pdb
+E:\test\Framework\Release\Framework.Data.dll.config
+E:\test\Framework\Release\Framework.Data.dll
+E:\test\Framework\Release\Framework.Data.pdb
+E:\test\Framework\Libraries\Framework.Data\obj\Debug\Framework.Data.csprojResolveAssemblyReference.cache
+E:\test\Framework\Libraries\Framework.Data\obj\Debug\Framework.Data.csproj.CoreCompileInputs.cache
+E:\test\Framework\Libraries\Framework.Data\obj\Debug\Framework.Data.dll
+E:\test\Framework\Libraries\Framework.Data\obj\Debug\Framework.Data.pdb

@@ -1,16 +1,12 @@
-﻿using Framework.Common.Json;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Linq;
 using System.Security.Principal;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Web;
-using System.Web.Http.Controllers;
 using System.Web.Mvc;
-using System.Web.UI;
+using Newtonsoft.Json;
+
+using Framework.Common.Json;
+using Framework.Common;
 
 namespace Framework.Auth
 {
@@ -46,9 +42,11 @@ namespace Framework.Auth
                 return;
             }
 
-            if (!filterContext.HttpContext.User.Identity.IsAuthenticated)
+            if (!Utility.IsUrl(filterContext.RequestContext.HttpContext.Request.Url.AbsoluteUri))
             {
-              //"<script type=text/javascript>parent.location.href = parent.location.href;</ script > ", false);
+                var url = filterContext.ActionDescriptor.ControllerDescriptor.ControllerName + "/" +
+                        filterContext.ActionDescriptor.ActionName;
+                filterContext.Result = new RedirectResult(url, true);
             }
 
             if (!filterContext.HttpContext.User.Identity.IsAuthenticated)
@@ -67,16 +65,31 @@ namespace Framework.Auth
             if (httpContext == null)
                 throw new ArgumentNullException("filterContext");
 
-            if (!httpContext.User.Identity.IsAuthenticated)
-                return false;
-
             IIdentity identity = httpContext.User.Identity;
             var userRights = identity.GetUserRight();
             var routeValues = httpContext.Request.RequestContext.RouteData.Values;
             string controller = routeValues["controller"].ToString().ToLower(),
-                action = routeValues["action"].ToString().ToLower();
-            string requestUrl = string.Concat("/", controller, "/", action);
+                action = routeValues["action"].ToString().ToLower(),
+                rightCode = httpContext.Request["rightCode"],
+               module = string.Empty;
 
+            if (string.IsNullOrEmpty(rightCode))
+            {
+                module = string.Concat("/", controller, "/", action);
+            }
+            else
+            {
+                var right = userRights.FirstOrDefault(a => a.SubMenuList.Exists(b => b.SubCode == rightCode))?
+                     .SubMenuList.FirstOrDefault(a => a.SubCode == rightCode);
+                if (right != null)
+                {
+                    module = right.Url;
+                }
+                else
+                {
+                    throw new ArgumentNullException($"权限编码无效{rightCode}");
+                }
+            }
             foreach (var right in userRights)
             {
                 if (!string.IsNullOrEmpty(right.Url))
@@ -88,9 +101,7 @@ namespace Framework.Auth
                 {
                     foreach (var subRight in right.SubMenuList)
                     {
-                        string[] subPaths = subRight.Url.Split('/').Where(a => !string.IsNullOrEmpty(a)).ToArray();
-
-                        if (controller == subPaths[0].ToLower())
+                        if (module.ToLower() == subRight.Url.ToLower())
                         {
                             return IdentityHelpers.SwitchActionType(subRight, ActionType, action);
                         }

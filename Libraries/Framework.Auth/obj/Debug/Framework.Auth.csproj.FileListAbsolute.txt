@@ -22,3 +22,12 @@ F:\project\Framework\Libraries\Framework.Auth\obj\Debug\Framework.Auth.Migration
 F:\project\Framework\Libraries\Framework.Auth\obj\Debug\Framework.Auth.csproj.GenerateResource.Cache
 F:\project\Framework\Libraries\Framework.Auth\obj\Debug\Framework.Auth.dll
 F:\project\Framework\Libraries\Framework.Auth\obj\Debug\Framework.Auth.pdb
+E:\test\Framework\Release\Framework.Auth.dll.config
+E:\test\Framework\Release\Framework.Auth.dll
+E:\test\Framework\Release\Framework.Auth.pdb
+E:\test\Framework\Libraries\Framework.Auth\obj\Debug\Framework.Auth.csprojResolveAssemblyReference.cache
+E:\test\Framework\Libraries\Framework.Auth\obj\Debug\Framework.Auth.Migrations.init.resources
+E:\test\Framework\Libraries\Framework.Auth\obj\Debug\Framework.Auth.csproj.GenerateResource.Cache
+E:\test\Framework\Libraries\Framework.Auth\obj\Debug\Framework.Auth.csproj.CoreCompileInputs.cache
+E:\test\Framework\Libraries\Framework.Auth\obj\Debug\Framework.Auth.dll
+E:\test\Framework\Libraries\Framework.Auth\obj\Debug\Framework.Auth.pdb

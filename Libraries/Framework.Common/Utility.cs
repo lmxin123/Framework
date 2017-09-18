@@ -11,6 +11,8 @@ using System.Xml.Linq;
 using Framework.Common.Http;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.Net.NetworkInformation;
+using Framework.Common.Extensions;
 
 namespace Framework.Common
 {
@@ -33,6 +35,14 @@ namespace Framework.Common
 
             Regex regex = new Regex(regformat, RegexOptions.IgnoreCase);
             return regex.IsMatch(value);
+        }
+
+        public static bool IsUrl(string str)
+        {
+            Uri uriResult;
+            bool result = Uri.TryCreate(str, UriKind.Absolute, out uriResult)
+                && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
+            return result;
         }
 
         /// <summary>
@@ -2240,6 +2250,27 @@ namespace Framework.Common
                 throw new ArgumentException("fileName 无效");
 
             return fileName.Substring(dotIndex);
+        }
+
+
+        public static string GetMACAddress()
+        {
+            NetworkInterface[] nics = NetworkInterface.GetAllNetworkInterfaces();
+            String sMacAddress = string.Empty;
+            foreach (NetworkInterface adapter in nics)
+            {
+                if (sMacAddress == String.Empty)// only return MAC Address from first card  
+                {
+                    IPInterfaceProperties properties = adapter.GetIPProperties();
+                    sMacAddress = adapter.GetPhysicalAddress().ToString();
+                }
+                else
+                {
+                    sMacAddress = string.Join(":", sMacAddress.SplitByLength(2));
+                    break;
+                }
+            }
+            return sMacAddress;
         }
     }
 }

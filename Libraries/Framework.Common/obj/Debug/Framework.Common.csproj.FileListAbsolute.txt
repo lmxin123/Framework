@@ -57,3 +57,9 @@ E:\github\Framework\Release\Framework.Common.dll
 E:\github\Framework\Release\Framework.Common.pdb
 E:\github\Framework\Libraries\Framework.Common\obj\Debug\Framework.Common.dll
 E:\github\Framework\Libraries\Framework.Common\obj\Debug\Framework.Common.pdb
+E:\test\Framework\Release\Framework.Common.dll.config
+E:\test\Framework\Release\Framework.Common.dll
+E:\test\Framework\Release\Framework.Common.pdb
+E:\test\Framework\Libraries\Framework.Common\obj\Debug\Framework.Common.csproj.CoreCompileInputs.cache
+E:\test\Framework\Libraries\Framework.Common\obj\Debug\Framework.Common.dll
+E:\test\Framework\Libraries\Framework.Common\obj\Debug\Framework.Common.pdb

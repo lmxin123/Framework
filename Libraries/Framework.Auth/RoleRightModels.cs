@@ -48,6 +48,7 @@ namespace Framework.Auth
                 {
                     Code = parent.Code,
                     All = defaultRight,
+                    
                     SubRightList = new List<SubRightItem>()
                 };
                 parent.SubMenuList.ForEach(sub =>

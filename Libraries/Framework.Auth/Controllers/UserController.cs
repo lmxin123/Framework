@@ -136,22 +136,22 @@ namespace Framework.Auth.Controllers
             //这里需要把用户Id传过去，是因为此时刚刚登录，并没有把cookie信息返回到前端，
             //IsAuthenticated还是为false的，所以后台还是获取不到当前用户的登录信息的
             var rights = User.Identity.GetUserRight(userId, true);
-            string url = string.Empty;
-            foreach (var right in rights)
-            {
-                if (right.All)
-                {
-                    if (!string.IsNullOrEmpty(right.Url))
-                    {
-                        url = right.Url;
-                    }
-                    else
-                    {
-                        url = right.SubMenuList.FirstOrDefault(item => item.All).Url;
-                    }
-                    break;
-                }
-            }
+            string url = rights.FirstOrDefault(a => a.Default).Url;
+            //foreach (var right in rights)
+            //{
+            //    if (right.All)
+            //    {
+            //        if (!string.IsNullOrEmpty(right.Url))
+            //        {
+            //            url = right.Url;
+            //        }
+            //        else
+            //        {
+            //            url = right.SubMenuList.FirstOrDefault(item => item.All).Url;
+            //        }
+            //        break;
+            //    }
+            //}
             return url;
         }
 
